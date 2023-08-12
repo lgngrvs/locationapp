@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Demo</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB090FLeTu5-GqrUUytI-dUOGLGL9pHvn4",
+    authDomain: "locationservice-16ebc.firebaseapp.com",
+    projectId: "locationservice-16ebc",
+    storageBucket: "locationservice-16ebc.appspot.com",
+    messagingSenderId: "217923775794",
+    appId: "1:217923775794:web:52720f27f3f57ab79bfb2b"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+<script>
+function onSignIn() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        var token = result.credential.idToken; // This is your Google OAuth2 token
+        var user = result.user;
+        // Now you can use this token to authenticate with your backend, or use Firebase directly.
+    }).catch(function(error) {
+        console.log(error);
+        alert("Failed to authenticate with Google.");
+    });
+}
+
+</script>
+
+</body>
+</html>
