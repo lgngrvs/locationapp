@@ -1,0 +1,54 @@
+/* Nav Bar Styles */        
+nav {
+    background-color: white;
+}
+.nav-item {
+    display: flex;
+    justify-content: center;
+
+}
+
+.location-header {
+    position: relative;
+    left: -20px; /* Space for the emoji */
+}
+
+.nav-item button {
+    height: 38px;
+    display: inline-block;
+    margin: auto;
+
+}
+
+
+/* Home Page Grid Styles */
+.list-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto 0.25fr; /* 1fr for the user name and auto for the location box */
+    align-items: center; /* vertically align items */
+    gap: 20px; /* space between columns */
+}
+
+.user-name {
+    text-align: left;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px; /* space between the image and the user name */
+}
+
+.location-box {
+    /*padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;*/
+    text-align: right;
+    white-space: nowrap; /* prevent wrapping of text in the box */
+}
+
+
+ select {
+    background-color: blue; !important
+}
